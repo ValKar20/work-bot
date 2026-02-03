@@ -5,7 +5,13 @@ from datetime import datetime, date
 from aiogram import Bot, Dispatcher, executor, types
 
 # 🔑 ВСТАВЬ СЮДА СВОЙ ТОКЕН
-bot = Bot("8550799031:AAEZJYbSLa7nBEwUrId5WIM6hotxP4llUl8")
+bot = Bot("import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN is not set")
+
+bot = Bot(BOT_TOKEN)")
 dp = Dispatcher(bot)
 
 # --- БАЗА ДАННЫХ ---
